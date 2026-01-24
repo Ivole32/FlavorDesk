@@ -4,7 +4,6 @@ import '../services/token_storage.dart';
 import 'token_page.dart';
 import '../main.dart';
 import 'dart:convert';
-import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -38,7 +37,7 @@ class _SettingsPageState extends State<SettingsPage> {
             child: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Theme.of(context).colorScheme.primary.withOpacity(0.9), Theme.of(context).colorScheme.secondary.withOpacity(0.7)],
+                  colors: [Theme.of(context).colorScheme.primary.withValues(alpha: 0.9), Theme.of(context).colorScheme.secondary.withValues(alpha: 0.7)],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
@@ -68,7 +67,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: Card(
-                      color: Theme.of(context).colorScheme.surface.withOpacity(0.8),
+                      color: Theme.of(context).colorScheme.surface.withValues(alpha: 0.8),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                       elevation: 2,
                       child: ListTile(
@@ -83,7 +82,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: Card(
-                      color: Theme.of(context).colorScheme.surface.withOpacity(0.8),
+                      color: Theme.of(context).colorScheme.surface.withValues(alpha: 0.8),
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                       elevation: 2,
                       child: ListTile(
@@ -98,14 +97,14 @@ class _SettingsPageState extends State<SettingsPage> {
                   const SizedBox(height: 24),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Divider(color: Theme.of(context).colorScheme.onSurface.withOpacity(0.2)),
+                    child: Divider(color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.2)),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                     child: Text(
                       'FlavorDesk v1.0',
                       style: TextStyle(
-                        color: Theme.of(context).colorScheme.onSurface.withOpacity(0.5),
+                        color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.5),
                         fontSize: 12,
                       ),
                       textAlign: TextAlign.center,
@@ -160,8 +159,8 @@ class _SettingsPageState extends State<SettingsPage> {
                   Navigator.of(context).popUntil((route) => route.isFirst);
                 }
               },
-              child: const Text('Logout'),
               style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+              child: const Text('Logout')
             ),
           ],
         ),

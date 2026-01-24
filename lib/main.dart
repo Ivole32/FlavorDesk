@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pages/token_page.dart';
 import 'pages/main_page.dart';
-import 'pages/settings_page.dart';
 import '../background_data_fetcher.dart';
 import 'services/auth_service.dart';
 
@@ -14,7 +13,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
